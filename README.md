@@ -3,8 +3,8 @@
 Change number (from number or string) to Persian (Farsi) text.
 
 Clone from **Number to persian text**
-✅ 2001 => دوهزار و یک
 
+✅ e.g. 1366 => هزار و سیصد و شصت و شش
 
 # how to use 👨🏻‍💻
 
