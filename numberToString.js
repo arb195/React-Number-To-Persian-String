@@ -3,75 +3,75 @@ export function NumberToString(num) {
    *
    * @type {string}
    */
-  var delimiter = ' و ';
+  var delimiter = " و ";
   /**
    *
    * @type {string}
    */
 
-  var zero = 'صفر';
+  var zero = "صفر";
   /**
    *
    * @type {string}
    */
 
-  var negative = 'منفی ';
+  var negative = "منفی ";
   /**
    *
    * @type {*[]}
    */
 
   var letters = [
-    ['', 'یک', 'دو', 'سه', 'چهار', 'پنج', 'شش', 'هفت', 'هشت', 'نه'],
+    ["", "یک", "دو", "سه", "چهار", "پنج", "شش", "هفت", "هشت", "نه"],
     [
-      'ده',
-      'یازده',
-      'دوازده',
-      'سیزده',
-      'چهارده',
-      'پانزده',
-      'شانزده',
-      'هفده',
-      'هجده',
-      'نوزده',
-      'بیست',
+      "ده",
+      "یازده",
+      "دوازده",
+      "سیزده",
+      "چهارده",
+      "پانزده",
+      "شانزده",
+      "هفده",
+      "هجده",
+      "نوزده",
+      "بیست",
     ],
-    ['', '', 'بیست', 'سی', 'چهل', 'پنجاه', 'شصت', 'هفتاد', 'هشتاد', 'نود'],
+    ["", "", "بیست", "سی", "چهل", "پنجاه", "شصت", "هفتاد", "هشتاد", "نود"],
     [
-      '',
-      'یکصد',
-      'دویست',
-      'سیصد',
-      'چهارصد',
-      'پانصد',
-      'ششصد',
-      'هفتصد',
-      'هشتصد',
-      'نهصد',
+      "",
+      "یکصد",
+      "دویست",
+      "سیصد",
+      "چهارصد",
+      "پانصد",
+      "ششصد",
+      "هفتصد",
+      "هشتصد",
+      "نهصد",
     ],
     [
-      '',
-      ' هزار',
-      ' میلیون',
-      ' میلیارد',
-      ' بیلیون',
-      ' بیلیارد',
-      ' تریلیون',
-      ' تریلیارد',
-      ' کوآدریلیون',
-      ' کادریلیارد',
-      ' کوینتیلیون',
-      ' کوانتینیارد',
-      ' سکستیلیون',
-      ' سکستیلیارد',
-      ' سپتیلیون',
-      ' سپتیلیارد',
-      ' اکتیلیون',
-      ' اکتیلیارد',
-      ' نانیلیون',
-      ' نانیلیارد',
-      ' دسیلیون',
-      ' دسیلیارد',
+      "",
+      " هزار",
+      " میلیون",
+      " میلیارد",
+      " بیلیون",
+      " بیلیارد",
+      " تریلیون",
+      " تریلیارد",
+      " کوآدریلیون",
+      " کادریلیارد",
+      " کوینتیلیون",
+      " کوانتینیارد",
+      " سکستیلیون",
+      " سکستیلیارد",
+      " سپتیلیون",
+      " سپتیلیارد",
+      " اکتیلیون",
+      " اکتیلیارد",
+      " نانیلیون",
+      " نانیلیارد",
+      " دسیلیون",
+      " دسیلیارد",
     ],
   ];
   /**
@@ -80,18 +80,18 @@ export function NumberToString(num) {
    */
 
   var decimalSuffixes = [
-    '',
-    'دهم',
-    'صدم',
-    'هزارم',
-    'ده‌هزارم',
-    'صد‌هزارم',
-    'میلیونوم',
-    'ده‌میلیونوم',
-    'صدمیلیونوم',
-    'میلیاردم',
-    'ده‌میلیاردم',
-    'صد‌‌میلیاردم',
+    "",
+    "دهم",
+    "صدم",
+    "هزارم",
+    "ده‌هزارم",
+    "صد‌هزارم",
+    "میلیونوم",
+    "ده‌میلیونوم",
+    "صدمیلیونوم",
+    "میلیاردم",
+    "ده‌میلیاردم",
+    "صد‌‌میلیاردم",
   ];
   /**
    * Clear number and split to 3 sections
@@ -101,23 +101,23 @@ export function NumberToString(num) {
   var prepareNumber = function prepareNumber(num) {
     var out = num;
 
-    if (typeof out === 'number') {
+    if (typeof out === "number") {
       out = out.toString();
     } //make first part 3 chars
 
     if (out.length % 3 === 1) {
-      out = '00'.concat(out);
+      out = "00".concat(out);
     } else if (out.length % 3 === 2) {
-      out = '0'.concat(out);
+      out = "0".concat(out);
     } // Explode to array
 
-    return out.replace(/\d{3}(?=\d)/g, '$&*').split('*');
+    return out.replace(/\d{3}(?=\d)/g, "$&*").split("*");
   }; //tinyNumToWord convert 3tiny parts to word
 
   var tinyNumToWord = function tinyNumToWord(num) {
     // return zero
     if (parseInt(num, 0) === 0) {
-      return '';
+      return "";
     }
 
     var parsedInt = parseInt(num, 0);
@@ -175,10 +175,10 @@ export function NumberToString(num) {
 
   var convertDecimalPart = function convertDecimalPart(decimalPart) {
     // Clear right zero
-    decimalPart = decimalPart.replace(/0*$/, '');
+    decimalPart = decimalPart.replace(/0*$/, "");
 
-    if (decimalPart === '') {
-      return '';
+    if (decimalPart === "") {
+      return "";
     }
 
     if (decimalPart.length > 11) {
@@ -186,9 +186,9 @@ export function NumberToString(num) {
     }
 
     return (
-      ' ممیز ' +
+      " ممیز " +
       Num2persian(decimalPart) +
-      ' ' +
+      " " +
       decimalSuffixes[decimalPart.length]
     );
   };
@@ -201,7 +201,7 @@ export function NumberToString(num) {
 
   var Num2persian = function Num2persian(input) {
     // Clear Non digits
-    input = input.toString().replace(/[^0-9.-]/g, '');
+    input = input.toString().replace(/[^0-9.-]/g, "");
     var isNegative = false;
     var floatParse = parseFloat(input); // return zero if this isn't a valid number
 
@@ -215,12 +215,12 @@ export function NumberToString(num) {
 
     if (floatParse < 0) {
       isNegative = true;
-      input = input.replace(/-/g, '');
+      input = input.replace(/-/g, "");
     } // Declare Parts
 
-    var decimalPart = '';
+    var decimalPart = "";
     var integerPart = input;
-    var pointIndex = input.indexOf('.'); // Check for float numbers form string and split Int/Dec
+    var pointIndex = input.indexOf("."); // Check for float numbers form string and split Int/Dec
 
     if (pointIndex > -1) {
       integerPart = input.substring(0, pointIndex);
@@ -228,7 +228,7 @@ export function NumberToString(num) {
     }
 
     if (integerPart.length > 66) {
-      return 'خارج از محدوده';
+      return "خارج از محدوده";
     } // Split to sections
 
     var slicedNumber = prepareNumber(integerPart); // Fetch Sections and convert
@@ -238,7 +238,7 @@ export function NumberToString(num) {
     for (var i = 0; i < slicedNumber.length; i += 1) {
       var converted = tinyNumToWord(slicedNumber[i]);
 
-      if (converted !== '') {
+      if (converted !== "") {
         out.push(converted + letters[4][slicedNumber.length - (i + 1)]);
       }
     } // Convert Decimal part
@@ -247,7 +247,7 @@ export function NumberToString(num) {
       decimalPart = convertDecimalPart(decimalPart);
     }
 
-    return (isNegative ? negative : '') + out.join(delimiter) + decimalPart;
+    return (isNegative ? negative : "") + out.join(delimiter) + decimalPart;
   }; //@depercated
 
   String.prototype.toPersianLetter = function () {
@@ -266,4 +266,13 @@ export function NumberToString(num) {
     return Num2persian(parseFloat(this).toString());
   };
   return Num2persian(num);
+}
+
+export function AddNumberToPersianStringProperty() {
+  Object.defineProperty(Number.prototype, "numberToPersianString", {
+    enumerable: false,
+    value: function () {
+      return NumberToString(this);
+    },
+  });
 }
