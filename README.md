@@ -1,9 +1,8 @@
 # React-Number-To-Persian-String
 
-# Clone from **Number to persian text**
-
 Change number (from number or string) to Persian (Farsi) text.
 
+Clone from **Number to persian text**
 ✅ 2001 => دوهزار و یک
 
 
